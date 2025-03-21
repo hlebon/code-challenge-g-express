@@ -45,4 +45,6 @@ app.use('/api/library', libraryRouter);
 
 app.use(errorHanlder);
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
