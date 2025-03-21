@@ -4,12 +4,6 @@
 
 Follow these steps to set up and run the project:
 
-### Prerequisites
-
-- Node.js installed
-- Yarn package manager installed
-- MongoDB instance running
-
 ### Installation
 
 1. Clone the repository:
@@ -19,31 +13,23 @@ Follow these steps to set up and run the project:
    cd kpi-dashboard-express
    ```
 
-2. Install dependencies:
-
-   ```bash
-   yarn install
-   ```
-
-3. Set up environment variables:
-   Create a `.env` file in the root directory and add the following:
+2. Copy the contents of the env-example file into a new .env file to configure your environment variables:
 
    ```env
    MONGODB_URL=your_mongodb_url
    PORT=your_port
    ```
 
-4. Seed the database with initial data:
+3. Run Docker:
+
    ```bash
-   node seed.js
+   docker-compose build
+   docker-compose up
    ```
 
-### Running the Project
+4. Seed the database with initial data:
+   ```bash
+   docker exec -it kpi-dashboard-express-app-1 yarn seed
+   ```
 
-Start the server:
-
-```bash
-yarn start
-```
-
-Your application should now be running and accessible at `http://localhost:your_port`.
+Your application should now be running and accessible at `http://localhost:your_port`, It should be `3000`

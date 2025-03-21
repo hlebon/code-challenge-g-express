@@ -1,0 +1,2 @@
+PORT=3001
+DB_URI=mongodb://mongo:27017/clusted-code-lab
